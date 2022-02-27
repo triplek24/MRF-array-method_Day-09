@@ -1,2 +1,2 @@
 # MRF-array-method_Day-09
-// using rest countries Api  using filter,Reduce,forEach ,etc
+//Arrow Function Array Method using rest countries Api  using filter,Reduce,forEach 
