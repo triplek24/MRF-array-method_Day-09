@@ -24,12 +24,10 @@ request.onload= function(){
     }
 
 //print follwoig details  name , capital , flag  - foreach,filter
-Object.keys(data.keys(data));
-    var namecap  = details.forEach((val)=>{
-        console.log(`obj[val.name]`);
+data.forEach((val)=>{
+        console.log(val.name);
         
-    })
-}
+    });
 //Print the total population of the countries  - reduce
 function TotalPopulation(details){
     var totpop = details.reduce((acc,cur)=>{
