@@ -25,28 +25,27 @@ request.onload= function(){
 
 //print follwoig details  name , capital , flag  - foreach,filter
 data.forEach((val)=>{
-        console.log(val.name);
+        console.log(`
+                "name:    "${val.name}
+                "capital: "${val.capital}
+                "flag   : "${val.flag}`);  //output name:countryName capital :capital name flag:flag link
         
     });
 //Print the total population of the countries  - reduce
-function TotalPopulation(details){
-    var totpop = details.reduce((acc,cur)=>{
-        acc = acc + parseInt(cur.population);
-        return acc;
-    },0)
-    console.log(totpop); 		//7374137231
+var data=JSON.parse(request.response);
+  
+  let CountryPopulation=data.map(country=>country.population);
+ let SumOfPopulation=CountryPopulation.reduce((sum,ppltn)=>sum+ppltn);
+ console.log(SumOfPopulation); 		// output:7374137231
 }
 //Print the total population of the countries in asia - filter & reduce
-function Asiancountriespop(details){
 
-    var asianpop = details.filter((val)=>val.region==="Asia")
+   var asianpop = data.filter((val)=>val.region==="Asia")
                             .reduce((acc,curr)=>{
                                 acc = acc + parseInt(curr.population);
                                 return acc;},0)
+   console.log(asianpop)     //   output:4391254784
 
-    console.log(asianpop); 			//4391254784
-
-}
  function uscurrency(details){
      var currency = details.filter((val)=>val["currencies"]==="united states dollar")
      console.log(countries.map((val)=>val["name"]))
