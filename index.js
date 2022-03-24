@@ -46,7 +46,10 @@ var data=JSON.parse(request.response);
                                 return acc;},0)
    console.log(asianpop)     //   output:4391254784
 
- function uscurrency(details){
+//Print the country which uses US Dollars as currency.
+
      var currency = details.filter((val)=>val["currencies"]==="united states dollar")
-     console.log(countries.map((val)=>val["name"]))
+     for(i=0;i<currency.length;i++){
+             console.log(currency[i].name);
+     }
 }
